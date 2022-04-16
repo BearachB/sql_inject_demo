@@ -26,18 +26,18 @@ $ cd server
 $ echo 'MYSQL_CREDS="mysql_password"' > .env
 ```
 
-10. To start the Express Server.
+09. To start the Express Server.
 ```bash
 $ cd client && yarn install     # Installs client dependencies
 $ cd ../server && yarn install  # Installs server dependencies
 $ yarn dev                      # Starts Express server
 ```
-11. To start the Vue server: In a new terminal, run:
+10. To start the Vue server: In a new terminal, run:
 ```bash
 $ cd client
 $ yarn serve                    # Starts Vue.js server
 ```
-12. This should open your default browser and connect to your local Vue server, if this doesn't happen go to your browser and manually connect to localhost:8080. 
+11. This should open your default browser and connect to your local Vue server, if this doesn't happen go to your browser and manually connect to localhost:8080. 
 13. Try search for a computer part, such as "cpu" or "board".
 14. Try some SQLi inputs in the search box:
 ```
