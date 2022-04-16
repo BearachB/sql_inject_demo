@@ -19,7 +19,6 @@ The below setup guide is for Linux (I set it up and ran it on Ubuntu 20.04.4 LTS
 10. Start the MySQL server with `mysql.server start`
 11. Login to MySQL with `mysql -u root -p`. The default password is blank
 12. Run `ALTER USER 'root'@'localhost' IDENTIFIED BY 'new_password';` to change your MySQL password
-13. Run `CREATE DATABASE sql_injection_demo` to create a new database for this project
 14. `QUIT` exits the MySQL monitor - Note: `mysql.server stop` stops the MySQL server. Do not run this if you are using the server.
 15. Add your MySQL credentials to an environment variable.
 ```bash
