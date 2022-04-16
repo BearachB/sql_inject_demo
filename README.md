@@ -1,26 +1,27 @@
-# sql-injection-demo
+# Secure Systems Assignment 2 - SQL Injection
+# Bearach Byrne - C15379616
 
-This is a simple web app with deliberately _terrible_ security. I was inspired by the Computerphile video below to (legally) try running an SQL injection attack on my own web server. (DO NOT try this on another website.)
+This is a simple web app originally taken from https://github.com/TanayB11/sql-injection-demo.git, with some minor modifications.
 
-The database inputs aren't sanitized, and the passwords are stored in plain text. This, of course, is exactly the _opposite_ of what you should do when building anything on the web.
-
-[![Computerphile - Running an SQL Injection Attack](http://img.youtube.com/vi/ciNHn38EyRc/0.jpg)](https://www.youtube.com/watch?v=ciNHn38EyRc "Running an SQL Injection Attack")
+This application is a lesson in how not to create a web application. It purposefully does not make use of any defenses against SQLi attacks.
 
 ## Stack
 - Vue
 - Node + Express
 - MySQL
 
+The below setup guide is for Linux (I set it up and ran it on Ubuntu 20.04.4 LTS
 
 ## Setup
-First clone the repo, then in the root of the repo, do the following.
-1. Install MySQL `brew install mysql`
-2. Start the MySQL server with `mysql.server start`
-3. Login to MySQL with `mysql -u root -p`. The default password is blank
-4. Run `ALTER USER 'root'@'localhost' IDENTIFIED BY 'new_password';` to change your MySQL password
-5. Run `CREATE DATABASE sql_injection_demo` to create a new database for this project
-6. `QUIT` exits the MySQL monitor
-7. Note: `mysql.server stop` stops the MySQL server. Do not run this if you are using the server.
+1. Clone the repo to a directory - `git clone https://github.com/BearachB/sql_inject_demo.git`
+8. Install Homebrew - `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)`. Ensure you add Homebrew to your path and bash shell profile script (follow prompts after installing Homebrew). 
+9. Install MySQL `brew install mysql`
+10. Start the MySQL server with `mysql.server start`
+11. Login to MySQL with `mysql -u root -p`. The default password is blank
+12. Run `ALTER USER 'root'@'localhost' IDENTIFIED BY 'new_password';` to change your MySQL password
+13. Run `CREATE DATABASE sql_injection_demo` to create a new database for this project
+14. `QUIT` exits the MySQL monitor
+15. Note: `mysql.server stop` stops the MySQL server. Do not run this if you are using the server.
 
 Add your MySQL credentials to an environment variable.
 ```bash
