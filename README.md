@@ -27,13 +27,13 @@ $ cd server
 $ echo 'MYSQL_CREDS="mysql_password"' > .env
 ```
 
-16. The following will start up the actual webapp.
+10. The following will start up the actual webapp.
 ```bash
 $ cd client && yarn install     # Installs client dependencies
 $ cd ../server && yarn install  # Installs server dependencies
 $ yarn dev                      # Starts Express server
 ```
-17. In a new terminal, run:
+11. In a new terminal, run:
 ```bash
 $ cd client
 $ yarn serve                    # Starts Vue.js server
