@@ -20,22 +20,20 @@ The below setup guide is for Linux (I set it up and ran it on Ubuntu 20.04.4 LTS
 11. Login to MySQL with `mysql -u root -p`. The default password is blank
 12. Run `ALTER USER 'root'@'localhost' IDENTIFIED BY 'new_password';` to change your MySQL password
 13. Run `CREATE DATABASE sql_injection_demo` to create a new database for this project
-14. `QUIT` exits the MySQL monitor
-15. Note: `mysql.server stop` stops the MySQL server. Do not run this if you are using the server.
-
-Add your MySQL credentials to an environment variable.
+14. `QUIT` exits the MySQL monitor - Note: `mysql.server stop` stops the MySQL server. Do not run this if you are using the server.
+15. Add your MySQL credentials to an environment variable.
 ```bash
 $ cd server
 $ echo 'MYSQL_CREDS="mysql_password"' > .env
 ```
 
-The following will start up the actual webapp.
+16. The following will start up the actual webapp.
 ```bash
 $ cd client && yarn install     # Installs client dependencies
 $ cd ../server && yarn install  # Installs server dependencies
 $ yarn dev                      # Starts Express server
 ```
-In a new terminal, run:
+17. In a new terminal, run:
 ```bash
 $ cd client
 $ yarn serve                    # Starts Vue.js server
@@ -48,9 +46,3 @@ ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'mysql_pa
 flush privileges;
 QUIT;
 ```
-
-
-## XKCD
-![Bobby Tables XKCD Comic](https://imgs.xkcd.com/comics/exploits_of_a_mom.png)
-
-(In case you haven't seen this yet)
