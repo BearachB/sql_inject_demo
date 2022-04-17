@@ -40,7 +40,7 @@ $ yarn serve                    # Starts Vue.js server
 ```
 11. This should open your default browser and connect to your local Vue server, if this doesn't happen go to your browser and manually connect to localhost:8080. 
 13. Try search for a computer part, such as "cpu" or "board".
-14. Try some SQLi inputs in the search box:
+14. Try some SQLi inputs in the search box: 
 ```
 -- Sleeps for 2 seconds per item found
 SELECT * FROM products WHERE name LIKE '%steel%' AND 0 = SLEEP(2); -- 
